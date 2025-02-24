@@ -1,6 +1,6 @@
 import { MessageSquare, Mail, DollarSign } from "lucide-react";
 import { useEffect, useState } from "react";
-const IconButton = ({ icon: Icon, text, onClick, delay }) => {
+const IconButton = ({ icon: Icon, text, onClick, delay, direction }) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -24,7 +24,11 @@ const IconButton = ({ icon: Icon, text, onClick, delay }) => {
                 cursor: "pointer",
                 transition: "transform 0.6s ease-out, opacity 0.6s ease-out",
                 opacity: isVisible ? 1 : 0, // Makes it visible
-                transform: isVisible ? "translateY(0)" : "translateY(20px)", // Moves it up
+                transform: direction == "bot" ? (isVisible ? "translateY(0)" : "translateY(50px)") :
+                    direction == "top" ? (isVisible ? "translateY(0)" : "translateY(-50px)") :
+                        direction == "right" ? (isVisible ? "translateX(0)" : "translateX(50px)") :
+                            direction == "left" ? (isVisible ? "translateX(0)" : "translateX(-50px)") :
+                                (isVisible ? "translateY(0)" : "translateY(-50px)"), // Moves it up
             }}
             onClick={onClick}
         >
