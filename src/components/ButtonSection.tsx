@@ -1,10 +1,11 @@
-'use client';
+"use client"
 import IconButton from "./Button";
 import { MessageSquare, Mail, DollarSign } from "lucide-react";
 const ButtonSection = ({ videoId, qrId, wishId }) => {
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <section className="button-section">
       <div style={{

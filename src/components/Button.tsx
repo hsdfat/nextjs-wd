@@ -1,3 +1,4 @@
+"use client"
 import { MessageSquare, Mail, DollarSign } from "lucide-react";
 import { useEffect, useState } from "react";
 const IconButton = ({ icon: Icon, text, onClick, delay, direction }) => {

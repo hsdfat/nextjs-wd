@@ -1,10 +1,25 @@
+'use client';
 import Panel from "./Panel";
 import QRCode from "./QRCode";
 import TextHeader from "./TextHeader";
+import "../app/styles.css";
+import React, { useEffect, useState, useRef } from "react";
 
 const DonateSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.3 } // Trigger when 30% of the component is visible
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
   return (
-    <section className="py-5 donate-section section-bg-affect" id="donate" style={{
+    <section className={`slicing-container-left ${isVisible ? "sliced" : ""}`} ref={ref} id="donate" style={{
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',

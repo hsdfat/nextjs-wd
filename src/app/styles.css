@@ -9,3 +9,20 @@
 .text-center {
     text-align: center !important;
 }
+
+.slicing-container-left {
+  transform: translateX(50px);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+  clip-path: polygon(0% 0%, 100% 10%, 100% 90%, 0% 100%);
+}
+
+.sliced {
+  transform: translateY(0);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.slicing-container-right {
+  transform: translateX(-50px);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+  clip-path: polygon(0% 0%, 100% 10%, 100% 90%, 0% 100%);
+}
