@@ -12,6 +12,8 @@ import DonateSection from '../components/DonateSection';
 import WishesSection from '../components/WishesSection';
 import Footer from '../components/Footer';
 import '../styles/style.css';
+import StaticButton from '@/components/StaticButton';
+import { ImagePlay } from 'lucide-react';
 
 export default function Home() {
 
@@ -38,6 +40,7 @@ export default function Home() {
           <ButtonSection wishId={"123"} qrId={"123"} videoId={"123"} />
           <VideoSection />
           <GallerySection />
+
           <WeddingDate wishId={"123"} />
           <Invitation />
           <EventSection />
