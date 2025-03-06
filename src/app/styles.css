@@ -17,7 +17,7 @@
 }
 
 .sliced {
-  transform: translateY(0);
+  transform: translateX(-10px);
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
@@ -25,4 +25,42 @@
   transform: translateX(-50px);
   transition: transform 1s ease-out, opacity 1s ease-out;
   clip-path: polygon(0% 0%, 100% 10%, 100% 90%, 0% 100%);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 40px;
+    font-size: 30px;
+    font-weight: normal;
+    color: #333;
+}
+
+.countdown div {
+    text-align: center;
+}
+
+.countdown span {
+    display: block;
+    font-size: 25px;
+    color: #888;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+.transition-transform {
+    transition: transform 0.3s ease-in-out;
+}
+.hover\:scale-105:hover {
+    transform: scale(1.05);
+}
+
+.ReactModal__Body--open {
+    .ril-image-current {
+        transform: none !important;
+        max-width: none !important;
+        max-height: none !important;
+    }
 }

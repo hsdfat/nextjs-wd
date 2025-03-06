@@ -1,6 +1,8 @@
-import Calendar from "./Calendar";
+interface WeddingDateProps {
+  wishId: string;
+}
 
-const WeddingDate = ({ wishId }) => {
+const WeddingDate: React.FC<WeddingDateProps> = ({ wishId }) => {
   return (
     <section id={wishId} className="py-5 section-sub-title weddingdate-section section-bg-affect" style={{
       display: 'flex',

@@ -11,7 +11,7 @@ const openSans = Open_Sans({
     display: 'swap',
 })
 
-const TextHeader = ({ content }) => {
+const TextHeader: React.FC<{ content: string }> = ({ content }) => {
     return (
         <p className={bonheurRoyale.className} style={{
             alignSelf: 'center',

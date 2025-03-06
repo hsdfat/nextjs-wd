@@ -1,3 +1,6 @@
+"use client"
+import Calendar from "./Calendar";
+import CountdownTimer from "./CountdownTimer";
 import TextHeader from "./TextHeader";
 
 const EventSection = () => {
@@ -19,7 +22,9 @@ const EventSection = () => {
       alignItems: 'center',
       flexDirection: 'column',
     }}>
-      <TextHeader content={"Sự kiện"}></TextHeader>
+      <TextHeader content={"Tháng 5"}></TextHeader>
+      <Calendar></Calendar>
+      <CountdownTimer targetDate={new Date("05-08-2025")}></CountdownTimer>
     </section>
   );
 };

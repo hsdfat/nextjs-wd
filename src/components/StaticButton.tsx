@@ -1,4 +1,4 @@
-const StaticButton = ({ icon: Icon, text, onClick}) => {
+const StaticButton: React.FC<{ icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>; text: string; onClick: () => void; }> = ({ icon: Icon, text, onClick }) => {
 
     return (
         <button
@@ -19,10 +19,11 @@ const StaticButton = ({ icon: Icon, text, onClick}) => {
             }}
             onClick={onClick}
         >
-            {Icon && <Icon size={18} style={{ color: "#FFFFFF" }} />}
+            {Icon && <Icon style={{ color: "#FFFFFF" }} />}
             <span>{text}</span>
         </button>
     );
 }
+
 
 export default StaticButton

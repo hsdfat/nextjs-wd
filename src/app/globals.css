@@ -639,3 +639,148 @@ border-left: 5px solid red;
   margin-top: 10px;
   background-color: gray;
 }
+
+/* General Calendar Styles */
+table {
+    width: 70%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Soft dark color for text */
+    /* background-color: #F9F9F9; Light background */
+}
+
+/* Header Styles */
+th {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 1px solid #000; /* Thin black underline */
+}
+
+/* Table Cells */
+td {
+    font-size: 18px;
+    width: 14.28%;
+    height: 50px;
+    transition: 0.3s ease-in-out;
+    vertical-align: middle;
+}
+
+tr {
+  padding: 100px;
+}
+
+/* Today’s Date */
+#today {
+    background-color: #666; /* Gray background */
+    color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-weight: bold;
+}
+
+/* Spacing Lines */
+.line {
+    border-top: 1px solid black;
+    margin: 20px 0;
+}
+
+/* Countdown Timer */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+.countdown div {
+    text-align: center;
+}
+
+.countdown span {
+    display: block;
+    font-size: 14px;
+    color: #888;
+}
+
+/* Wedding Day Styling */
+.wedding-day {
+    background-color: #D0B179; /* Royal gold */
+    color: #f7f6f6; /* Deep maroon */
+    font-weight: bold;
+    /* border: 3px solid #8B0000;  */
+    border-radius: 10px;
+    padding: 8px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Tooltip for Wedding Day */
+.wedding-day:hover::after {
+    content: "💍 Ngày cưới 🎊";
+    position: absolute;
+    bottom: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #D0B179;
+    color: rgb(3, 3, 3);
+    padding: 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 14px;
+    z-index: 10;
+    font-family: 'Georgia', serif;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Effects */
+.wedding-day:hover {
+    background-color: #B89E60; /* Deeper gold */
+    transform: scale(1.1);
+}
+
+/* Wedding Day Styling */
+.engagement-day {
+    background-color: #D0B179; /* Royal gold */
+    color: #f7f6f6; /* Deep maroon */
+    font-weight: bold;
+    /* border: 3px solid #8B0000;  */
+    border-radius: 10px;
+    padding: 8px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Tooltip for Wedding Day */
+.engagement-day:hover::after {
+    content: "💍 Nạp tài 🎊";
+    position: absolute;
+    bottom: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #D0B179;
+    color: rgb(3, 3, 3);
+    padding: 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 14px;
+    z-index: 10;
+    font-family: 'Georgia', serif;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Effects */
+.engagement-day:hover {
+    background-color: #B89E60; /* Deeper gold */
+    transform: scale(1.1);
+}

@@ -34,8 +34,8 @@ const DonateSection = () => {
         justifyContent: 'space-around',
         width: '100%',
       }}>
-        <QRCode type={"Chú rể"} name={"LE CHI PHAT"} bank={"Vietinbank"} account={"109003117305"}></QRCode>
-        <QRCode type={"Cô dâu"} name={"DO THI TU ANH"} bank={"Agribank"} account={"109003117305"}></QRCode>
+        <QRCode type={"Chú rể"} name={"LE CHI PHAT"} bank={"Vietinbank"} account={"109003117305"} imgSrc={require("../images/qr_phat.jpeg")} url="/qr_phat.jpeg" ></QRCode>
+        <QRCode type={"Cô dâu"} name={"DO THI TU ANH"} bank={"Agribank"} account={"109003117305"} imgSrc={require("../images/qr_phat.jpeg")} url="/qr_phat.jpeg"></QRCode>
       </div>
     </section>
   );
