@@ -4,6 +4,7 @@ import IconButton from "./Button";
 import TextHeader from "./TextHeader";
 import StaticButton from "./StaticButton";
 import Panel from "./Panel";
+import GalleryPage from "./GalleryPage";
 
 const GallerySection = () => {
   const photoGalleries = [
@@ -23,16 +24,8 @@ const GallerySection = () => {
     }}>
       <TextHeader content={"Album Hình Cưới"}></TextHeader>
       <Panel text="Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh, trong khi yêu ai đó sâu sắc sẽ cho bạn dũng khí."></Panel>
-      <div className="row gx-2" id="photoGalleryContainer">
-        {photoGalleries.map((photo, index) => (
-          <div key={index} className="col-6 gallery-item section-sub-title mb-2 btn-see-more-gallery" data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}>
-            <img src={photo.thumb} alt={`Gallery ${index + 1}`} />
-          </div>
-        ))}
-      </div>
-      <div className="text-center" data-aos="fade-up">
-        <StaticButton icon={ImagePlay} text="Tất cả ảnh" onClick={() => { }} />
-      </div>
+      <GalleryPage></GalleryPage>
+      
 
     </section>
   );
