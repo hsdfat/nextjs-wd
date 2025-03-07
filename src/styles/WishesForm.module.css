@@ -2,7 +2,6 @@
 .formContainer {
   max-width: 500px;
   margin: 0 auto;
-  background-color: white;
   border-radius: 8px;
   box-shadow: var(--shadow);
   overflow: hidden;

@@ -1,12 +1,12 @@
 /* styles/WishesList.module.css */
 .wishesContainer {
-  max-width: 900px;
+  max-width: "80";
   margin: 0 auto;
 }
 
 .wishesHeader {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 1.5rem;
 }

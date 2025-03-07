@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../styles/WishesList.module.css';
+import TextHeader from './TextHeader';
 
 interface Wish {
   id: number;
@@ -18,9 +19,10 @@ const WishesList: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    console.log("loading")
     const fetchWishes = async () => {
       try {
-        const response = await fetch('/api/wishes');
+        const response = await fetch('http://localhost:8080/api/wishes');
 
         if (!response.ok) {
           throw new Error('Không thể tải dữ liệu');
@@ -29,6 +31,7 @@ const WishesList: React.FC = () => {
         const data = await response.json();
         setWishes(data.wishes || []);
       } catch (err) {
+        console.log(err);
         setError('Đã xảy ra lỗi khi tải lời chúc. Vui lòng thử lại sau.');
       } finally {
         setLoading(false);
@@ -63,10 +66,7 @@ const WishesList: React.FC = () => {
   return (
     <div className={styles.wishesContainer}>
       <div className={styles.wishesHeader}>
-        <h2 className={styles.wishesTitle}>Lời Chúc Từ Bạn Bè</h2>
-        <Link href="/" className={styles.addButton}>
-          <span>+</span> Gửi lời chúc mới
-        </Link>
+        <TextHeader content={"Lời Chúc Từ Bạn Bè"}></TextHeader>
       </div>
 
       {wishes.length === 0 ? (

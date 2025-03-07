@@ -37,7 +37,7 @@ const WishesForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/wishes', {
+      const response = await fetch('localhost:8080/api/wishes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -63,7 +63,6 @@ const WishesForm: React.FC = () => {
   return (
     <div className={styles.formContainer}>
       <div className={styles.formHeader}>
-        <h2 className={styles.formTitle}>Sổ Lưu Bút</h2>
         <p className={styles.formDescription}>
           Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của chúng tôi!
         </p>
