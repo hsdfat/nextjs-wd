@@ -26,7 +26,7 @@ const WishesList: React.FC<WishesListProps> = ({ refreshTrigger }) => {
     const fetchWishes = async () => {
       setLoading(true);
       try {
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://backend:8080';
         const response = await fetch(`${apiUrl}/api/wishes`);
 
         if (!response.ok) {

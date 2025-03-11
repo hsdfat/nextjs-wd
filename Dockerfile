@@ -13,6 +13,9 @@ RUN npm ci --production --force
 # Copy the rest of the application code
 COPY . .
 
+# Copy .env file (if you want to include it in the build)
+COPY .env* ./
+
 # Build the Next.js app
 RUN npm run build
 
@@ -27,6 +30,9 @@ COPY --from=builder /app/package.json /app/package-lock.json ./
 COPY --from=builder /app/.next .next
 COPY --from=builder /app/node_modules node_modules
 COPY --from=builder /app/public public
+
+# Optional: Copy .env file to the runner stage if needed
+COPY --from=builder /app/.env* ./
 
 # Set environment variable for production
 ENV NODE_ENV=production
