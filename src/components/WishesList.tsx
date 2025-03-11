@@ -1,7 +1,6 @@
 // components/WishesList.tsx
 "use client"
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import styles from '../styles/WishesList.module.css';
 import TextHeader from './TextHeader';
 
@@ -13,14 +12,19 @@ interface Wish {
   created_at: string;
 }
 
-const WishesList: React.FC = () => {
+interface WishesListProps {
+  refreshTrigger: number;
+}
+
+const WishesList: React.FC<WishesListProps> = ({ refreshTrigger }) => {
   const [wishes, setWishes] = useState<Wish[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [selectedWish, setSelectedWish] = useState<Wish | null>(null);
 
   useEffect(() => {
-    console.log("loading")
     const fetchWishes = async () => {
+      setLoading(true);
       try {
         const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
         const response = await fetch(`${apiUrl}/api/wishes`);
@@ -40,7 +44,15 @@ const WishesList: React.FC = () => {
     };
 
     fetchWishes();
-  }, []);
+  }, [refreshTrigger]); // Re-fetch when refreshTrigger changes
+
+  const handleWishClick = (wish: Wish) => {
+    setSelectedWish(wish);
+  };
+
+  const closePopup = () => {
+    setSelectedWish(null);
+  };
 
   if (loading) {
     return (
@@ -75,18 +87,46 @@ const WishesList: React.FC = () => {
           <p>Chưa có lời chúc nào. Hãy là người đầu tiên gửi lời chúc!</p>
         </div>
       ) : (
-        <div className={styles.wishesGrid}>
-          {wishes.map((wish) => (
-            <div key={wish.id} className={styles.wishCard}>
-              <div className={styles.wishHeader}>
-                <h3 className={styles.wishName}>{wish.name}</h3>
-                <span className={styles.wishDate}>
-                  {new Date(wish.created_at).toLocaleDateString('vi-VN')}
-                </span>
+        <div className={styles.wishesScrollContainer}>
+          <div className={styles.wishesGrid}>
+            {wishes.map((wish) => (
+              <div
+                key={wish.id}
+                className={styles.wishCard}
+                onClick={() => handleWishClick(wish)}
+              >
+                <div className={styles.wishHeader}>
+                  <h3 className={styles.wishName}>{wish.name}</h3>
+                  <span className={styles.wishDate}>
+                    {new Date(wish.created_at).toLocaleDateString('vi-VN')}
+                  </span>
+                </div>
+                <p className={styles.wishMessage}>
+                  {wish.message.length > 100
+                    ? `${wish.message.substring(0, 100)}...`
+                    : wish.message}
+                </p>
               </div>
-              <p className={styles.wishMessage}>{wish.message}</p>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Wish Detail Popup */}
+      {selectedWish && (
+        <div className={styles.popup} onClick={closePopup}>
+          <div className={styles.popupContent} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.popupHeader}>
+              <h3 className={styles.popupName}>{selectedWish.name}</h3>
+              <span className={styles.popupDate}>
+                {new Date(selectedWish.created_at).toLocaleDateString('vi-VN')}
+              </span>
+              <button className={styles.closeButton} onClick={closePopup}>×</button>
             </div>
-          ))}
+            <div className={styles.popupBody}>
+              <p className={styles.popupMessage}>{selectedWish.message}</p>
+            </div>
+          </div>
         </div>
       )}
     </div>
