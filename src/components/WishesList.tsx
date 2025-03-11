@@ -22,7 +22,8 @@ const WishesList: React.FC = () => {
     console.log("loading")
     const fetchWishes = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/wishes');
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+        const response = await fetch(`${apiUrl}/api/wishes`);
 
         if (!response.ok) {
           throw new Error('Không thể tải dữ liệu');

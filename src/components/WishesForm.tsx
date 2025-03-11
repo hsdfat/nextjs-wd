@@ -37,7 +37,8 @@ const WishesForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('localhost:8080/api/wishes', {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+      const response = await fetch(`${apiUrl}/api/wishes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,7 +55,7 @@ const WishesForm: React.FC = () => {
         setSubmitStatus({ success: false, message: data.error || 'Có lỗi xảy ra, vui lòng thử lại.' });
       }
     } catch (error) {
-      setSubmitStatus({ success: false, message: 'Lỗi kết nối, vui lòng thử lại sau.' });
+      setSubmitStatus({ success: false, message: `Lỗi kết nối, vui lòng thử lại sau.` });
     } finally {
       setIsSubmitting(false);
     }
