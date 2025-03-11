@@ -1,0 +1,62 @@
+/* Invitation.module.css */
+
+/* Import elegant Vietnamese-friendly fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+.invitationContent {
+  text-align: center;
+  padding: 20px 10px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.poem {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.8;
+  color: #4a2b13;
+  margin-bottom: 30px;
+}
+
+.message {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.signature {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #4a2b13;
+  margin-top: 25px;
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+  .poem {
+    font-size: 1.3rem;
+  }
+  
+  .message {
+    font-size: 1rem;
+  }
+  
+  .signature {
+    font-size: 1.2rem;
+  }
+}
+
+/* Add a subtle animation for the content */
+.invitationContent {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
