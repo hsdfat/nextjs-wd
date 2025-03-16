@@ -67,9 +67,9 @@ body {background: #ccc;font-weight:200!important;}
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{--bs-gutter-x: 2.5rem;}
 .navbar-toggler:focus{outline: 0;box-shadow: none!important;}
 .section-title{font-size:2rem;}
-.section-sub-title{font-size:1.1rem;font-weight: 200!important;}
+.section-sub-title{font-size:0.8rem;font-weight: 200!important;}
 .title {font-size:1.4rem;}
-.sub-title {font-size:1.1rem;}
+.sub-title {font-size:0.8rem;}
 img {width: 100%;max-width: 100%;height: auto;}
 .wrapper {overflow: hidden; background: #fff;width: 100%;max-width: 575px;margin: 0 auto;}
 .navbar {width: 100%;max-width: 575px;margin: 0 auto;}

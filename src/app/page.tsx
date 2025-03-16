@@ -15,6 +15,9 @@ import '../styles/style.css';
 import StaticButton from '@/components/StaticButton';
 import { ImagePlay } from 'lucide-react';
 
+const wishId = "123";
+const qrId = "456";
+const videoId = "789";
 export default function Home() {
 
   return (
@@ -37,16 +40,17 @@ export default function Home() {
         <div className='wrapper'>
           {/* <Header /> */}
           <Banner />
-          <ButtonSection wishId={"123"} qrId={"123"} videoId={"123"} />
+          <ButtonSection wishId={wishId} qrId={qrId} videoId={videoId} />
           <VideoSection />
           <GallerySection />
 
-          <WeddingDate wishId={"123"} />
+          <WeddingDate wishId={videoId} />
           <Invitation />
           <EventSection />
           <CoupleSection />
-          <DonateSection />
-          <WishesSection />
+
+          <WishesSection wishId={wishId} />
+          <DonateSection qrId={qrId} />
           <Footer />
         </div>
       </body>

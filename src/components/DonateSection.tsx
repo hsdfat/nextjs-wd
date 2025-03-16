@@ -4,8 +4,10 @@ import QRCode from "./QRCode";
 import TextHeader from "./TextHeader";
 import "../app/styles.css";
 import React, { useEffect, useState, useRef } from "react";
-
-const DonateSection = () => {
+interface DonateSectionProps {
+  qrId: string;
+}
+const DonateSection: React.FC<DonateSectionProps> = ({ qrId }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLAudioElement>(null);
 
@@ -19,7 +21,7 @@ const DonateSection = () => {
     return () => observer.disconnect();
   }, []);
   return (
-    <section className={`slicing-container-left ${isVisible ? "sliced" : ""}`} ref={ref} id="donate" style={{
+    <section className={`slicing-container-left ${isVisible ? "sliced" : ""}`} ref={ref} id={qrId} style={{
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',

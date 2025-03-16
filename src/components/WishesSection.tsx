@@ -4,8 +4,10 @@ import { useState } from "react";
 import TextHeader from "./TextHeader";
 import WishesForm from "./WishesForm";
 import WishesList from "./WishesList";
-
-const WishesSection = () => {
+interface WishesSectionProps {
+  wishId: string;
+}
+const WishesSection: React.FC<WishesSectionProps> = ({ wishId }) => {
   // This counter will trigger a refresh of the WishesList when incremented
   const [refreshCounter, setRefreshCounter] = useState<number>(0);
 
@@ -15,7 +17,7 @@ const WishesSection = () => {
   };
 
   return (
-    <section className="py-5 wishes-section section-bg-affect" id="wishes" style={{
+    <section id={wishId} className="py-5 wishes-section section-bg-affect" style={{
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
