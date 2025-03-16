@@ -68,7 +68,7 @@ const WishesForm: React.FC<WishesFormProps> = ({ onWishAdded }) => {
     setIsDone(false);
 
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://backend:8080';
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://chiphat-tuanh.info.vn';
       const response = await fetch(`${apiUrl}/api/wishes`, {
         method: 'POST',
         headers: {
